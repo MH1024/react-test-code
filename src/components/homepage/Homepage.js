@@ -1,4 +1,5 @@
 import React, {useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { Button, Row, Card, CardImg, CardImgOverlay, CardTitle, CardText, Col } from 'reactstrap'
 import pizza from "../../assets/images/pizza-2.jpeg";
 export default function Homepage(props) {
@@ -11,6 +12,10 @@ export default function Homepage(props) {
                 alt="Card image cap"
                 src={pizza}
                 width="100%"
+                style={{ backgroundPosition: "center",
+                    
+                    height: "100vh",
+                    position: "center"}}
                 />
                 <CardImgOverlay>
                 <Row style={{height: "100vh"}} >
@@ -38,7 +43,9 @@ export default function Homepage(props) {
                     This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
                 </CardText>
                 <CardText>
-                    <Button  color="warning" outline>ORDER ONLINE</Button>
+                    <Link to="/menu">
+                        <Button  color="warning" outline>ORDER ONLINE</Button>
+                    </Link>
                 </CardText>
                     </Col>
                 </Row>
