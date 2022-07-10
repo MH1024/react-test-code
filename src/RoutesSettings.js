@@ -1,7 +1,7 @@
 import React, {useEffect, lazy, Suspense} from 'react'
 import {Navigate, Route, Routes } from 'react-router-dom'
 import Homepage from './components/homepage'
-import Menu from './components/menu'
+import Ordering from './components/ordering'
 
 
 
@@ -11,7 +11,7 @@ const RoutesSettings = () => {
        
         <Routes>
             <Route path="/homepage" element={<Homepage />} />
-            <Route path="/menu" element={<Menu />} />
+            <Route path="/ordering" element={<Ordering />} />
             <Route path='/' element={<Navigate to='/homepage' replace />} />
         </Routes>
         
