@@ -32,7 +32,7 @@ const Details = () => {
         {
             name: "Address",
             type: "text",
-            placeholder: "Plase input your Name"
+            placeholder: "Plase input your Address"
         },
         {
             name: "Postcode",
@@ -54,9 +54,9 @@ const Details = () => {
                     <CardTitle tag="h4" className='p-10'>
                     Enter Your Detail
                     </CardTitle>
-                    <Row xs="3">
+                    <Row>
                         {inputConfigs.map((item, index) => (
-                            <Col style={styles.col} key={index+1}>
+                            <Col md="4" style={styles.col} key={index+1}>
                                 <FormGroup>
                                     <Label for="examplePassword">
                                         {item.name}
