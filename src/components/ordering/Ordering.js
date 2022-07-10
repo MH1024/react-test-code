@@ -5,7 +5,38 @@ import Details from '../details'
 import Summary from '../summary'
 import Toppings from '../toppings'
 const Ordering = () => {
-
+    const inputConfigs = [
+        {
+            name: "Name",
+            type: "text",
+            placeholder: "Please input your Name"
+        },
+        {
+            name: "Email",
+            type: "email",
+            placeholder: "Please input your Email"
+        },
+        {
+            name: "Confirm Email",
+            type: "email",
+            placeholder: "Please input your Confirm Email"
+        },
+        {
+            name: "Address",
+            type: "text",
+            placeholder: "Please input your Address"
+        },
+        {
+            name: "Postcode",
+            type: "number",
+            placeholder: "Please input your Post code(4 digit)"
+        },
+        {
+            name: "Contact Number",
+            type: "text",
+            placeholder: "Please input your AU Phone Number"
+        }
+    ]
 
     const toppingOptions = [
         {
@@ -74,7 +105,7 @@ const Ordering = () => {
     const [selectedToppingArray, setSelectedToppingArray] = useState([]);
     const [totalPrice, setTotalPrice] = useState(9.99)
     const [isSelectAll, setIsSelectAll] = useState(false);
-
+    const [fieldArray, setFieldArray] = useState(inputConfigs);
     const countTotalPrice = (validArray) => {
         const groupPriceArray = validArray.map(item => item.groupPrice );
         const countToppingPrice = groupPriceArray && groupPriceArray.length ? groupPriceArray.reduce(function(acr, cur){
@@ -140,9 +171,23 @@ const Ordering = () => {
         }
     }
     const placeOrder = () => {
+        let invalid = false; 
+        for (const item of fieldArray) {
+            if (item && (!item.value || item.invalid)) {
+                invalid = true;
+            }
+        }
+        if (invalid) {
+            alert('Please fill the Detail Form before place order.')
+            return
+        }
+        const detailObj = fieldArray.reduce((acc, cur ) => {
+            acc[cur.name] = cur.value 
+            return acc
+        }, {});
+
         const orderSummary = {
-            detail:{
-            },
+            detail:detailObj,
             selectedTopping: selectedToppingArray,
             totalPrice: totalPrice
         }
@@ -152,8 +197,10 @@ const Ordering = () => {
     
     return (
         <div>
-            <Details 
-                />
+            <Details
+                fieldArray={fieldArray}
+                setFieldArray={setFieldArray} 
+            />
             <Toppings
                 handleSelectAllAction={handleSelectAllAction}
                 isSelectAll={isSelectAll}
