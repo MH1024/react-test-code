@@ -7,21 +7,28 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [16.x]
+
     steps:
       - name: Development Code
         uses: actions/checkout@v2
-      - name: Use Node.js 18.x
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: 18.x
-      - run: npm install
+          node-version: 16.x
       - name: npm build
         run: |
+          npm install
           npm run build
       - name: Archive Build
         uses: actions/upload-artifact@v2
