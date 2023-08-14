@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import { Button, Row, Card, CardImg, CardImgOverlay, CardTitle, CardText, Col } from 'reactstrap'
 import pizza from "../../assets/images/pizza-2.jpeg";

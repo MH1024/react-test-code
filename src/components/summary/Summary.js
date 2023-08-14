@@ -1,5 +1,5 @@
-import React, { useState }  from 'react'
-import { Button, Card, CardText, CardTitle, Col, FormGroup, Input, Label, Row } from 'reactstrap'
+import React from 'react'
+import { Card, CardTitle, Label, Row } from 'reactstrap'
 import IncDecCounter from './IncDecCounter';
 const Summary = (props) => {
     const { totalPrice, selectedToppingArray, selectToppingQty } = props;
