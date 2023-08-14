@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Card, CardText, CardTitle, Col, FormFeedback, FormGroup, Input, Label, Row } from 'reactstrap'
+import { Card, CardTitle, Col, FormFeedback, FormGroup, Input, Label, Row } from 'reactstrap'
 import validator from 'validator';
 const Details = (props) => {
     const {fieldArray, setFieldArray} = props;

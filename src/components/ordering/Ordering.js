@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Button, Card, CardText, CardTitle, Col, FormGroup, Input, Label, Row } from 'reactstrap'
+import { Button, Card, Col, Row } from 'reactstrap'
 import Details from '../details'
 import Summary from '../summary'
 import Toppings from '../toppings'
