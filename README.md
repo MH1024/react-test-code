@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# Pizza menu demo app build with React and deployed to Firebase hosting by using GitHub Actions
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## DEMO
 
-https://react-test-code.herokuapp.com/
+https://react-test-client.firebaseapp.com/
 
 ## Available Scripts
 
